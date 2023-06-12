@@ -1,0 +1,96 @@
+Infrastructure as code using aws cloud development kit (cdk)
+
+cdk main components
+core framework, app, stacks, resources
+aws construct library 
+aws cdk cli 
+
+
+cdk init // create new project 
+cdk synth  // create templates and assets
+cdk diff // check what will change 
+cdk deploy // push changes to your account 
+
+
+cdk construct levels 
+L3+ purpose-built constructs, opinionated abstracctions 
+L2  aws constructs, high-level service ocnstructs 
+L1  cloudformation resources, auttomatically generated 
+
+
+L3
+new patterns.ApplicationLoadBalancedFargateServicce(stack, 'MyFargateService', {
+    taskImageOptions: {
+        image: ecs.ContainerImage.fromRegistry("amazon/amazon-ecs-sample")
+    }
+});
+
+
+L2
+new ec2.Vpc(this, 'MyVPC')
+
+cdk synth  
+
+
+L1 
+new CfnBucket(this, 'MyBucket', {bucketName: 'my-bucket'})
+
+cdk synth 
+
+# cfn
+Resources:
+  myBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: my-bucket 
+
+
+cdk watch ExampleStack 
+
+
+demo code 
+
+cdk init sample-app --language python 
+
+cdk ls 
+cdk synth // emits the synthesized cloudformation template 
+cdk deploy 
+cdk diff 
+cdk docs 
+
+cdk bootstrap  
+
+cdk deploy --hotswap 
+
+# cdk stack 
+
+class CdkWorkshopStack(Stack):
+    
+    def __init__(self, scope: Construct, cconstrut_id: str, **kwargs) -> None:
+        super().__init__(scope, construct_id, **kwargs)
+
+    my_lambda = _lambda.Functiion(
+        self, 'HelloHandler',
+        runtime = _lambda.Runtime.PYTHON_3_7,
+        code = _lambda.Code.from_asset('lambda'),
+        handler = 'hello.handler',
+    )
+
+    apigw.LambdaRestApi(
+        self, 'Endpoint',
+        handler = my_lambda
+    )
+
+
+
+
+
+
+
+
+
+
+
+
+
+

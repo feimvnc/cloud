@@ -1,0 +1,115 @@
+aws iam 
+
+identtity and credenial manageement 
+permission management 
+tools 
+
+identiy: 
+who can access what
+who (developes and applications) can access(permissions) what (resources)
+
+human users: developer ,analysts, data scientists, workforce
+workloads: ci/cd pipelines, applications, machine identities 
+
+centralize user stores
+reduce password fatigue
+decrease the number to manage 
+ease of auditing 
+
+least privilege is a journey
+exploring aws 
+right-sizing
+specifying conditions 
+
+iam conditions:
+"Condition": {"{condition-operator}":{"{condition-key}":"{condition-value}"
+
+
+Attributes
+Known as tags in aws 
+Are key or a key and value pair 
+For cost allocation, discovery, and access control
+
+
+sample iam policy, resource tag must match project tag in order to run actions 
+{
+  "Effect": "Allow",
+  "Action": [
+     "secretsmanager:GetResourcePolicy",
+     "secretsmanager:GetSecretValue",
+     "secretsmanager:UpdateSecret"
+   ],
+   "Resource":"*",
+   "Condition":  {
+      "StringEquals": {
+         "secretsmanager:ResourceTag/project":"${aws:PrincipalTag/project}"
+      }
+   } 
+}
+
+
+#Permission boundary walkthrough
+#admin step 1: create the permission boundary (managed policy)
+{
+  "Version": "2012-10-17",
+  "Statement": [ {
+     "Effect": "Allow",
+     "Action: [
+        "dynamodb:PutItem",
+        "dynamodb:UpdateItem",
+        "dynamodb:DeleteItem:
+     ],
+     "Resource": "*",
+     "Condition": {
+        "StringEquals": { "aws:RequestedRegion": "eu-central-1" }
+     }
+  } ]
+
+}
+
+#admin step 2: allow role creation but only within boundary
+
+{
+  "Version": "2012-10-17",
+  "Statement": [ {
+     "Effect": "Allow",
+     "Action: [
+        "iam:CreateRole", "iam:AttachRolePolicy", "iam:DetatchRolePolicy" ],
+     ],
+     "Resource": "arn:aws:iam::111122223333:role/executionroles/MyExampleApp",
+     "Condition": {
+        "StringEquals": { "iam.PermissionBoundry": "arn:aws:iam::111122223333:policy/boundryies/dynamodb_eu"
+     }
+    } 
+   },
+   {
+     "Effect": "Allow",
+     "Action:[ "iam.createPoliicy", "iam.createPolicyVersion", "iam.DeletePolicyVersion" ],
+     "Resource": "arn:aws:iam::111122223333:policy/delegateadmin"
+   } ]
+}
+
+
+# dr and resilience of iam center 
+iam is a global service, deployed in 21 regions globally, as a regional service, 
+
+#playbooks 
+github.com/aws-samples/aws-incident-response-playbooks
+github.com/aws-samples/aws-customer-playbook-framework
+docs.aws.amazon.com/whitepapers/latest/aws-security-incident-response-guide/welcome.html
+
+
+# log4j quick wins
+Implement basic egress controls, e.g. DNS firewall
+Implement GuardDuty across aws organizations
+Use AWS Managed Rules for AWS WAF
+Use NACLs to control traffic 
+
+
+
+   
+
+
+
+
+

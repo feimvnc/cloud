@@ -1,0 +1,95 @@
+aws config, audit manager, cloud trail, system manager, observability tools 
+
+challenges
+dynamic landscape
+volume, variety, and veelocity
+global/geographic
+pace of innovation 
+familliarity with the cloud
+different compliancce and security needs 
+
+3 lines of cloud compliance and assurance 
+Management
+  Enable risk management 
+    aws seccurity hub
+    aws control tower
+    aws backup 
+    aws config 
+  Manage risk
+    aws system manager 
+Independent assurance 
+  aws audit manager 
+  aws cloudtrail 
+
+aws config recording - records resource changes  (aws and 3rd-party resources)
+aws config rules - evaluate compliance of resources (managed, custom, change-triggered, periodic)
+  aws security hub
+  aws backup 
+  aws control tower
+  aws audit manager 
+  conformance packs 
+  aws firewall manager 
+
+
+Manage risk - aws config dsl rule 
+rule desireddInstanceType when 
+    resourceType == "AWS::EC2::Instance" {
+        cconfiguration.instanceType
+}
+
+
+Audit manager frameworks 
+NIST 800-53(Rev.-5)
+CIS 
+PCI DSS
+gdpr 
+GxP
+GLBA
+HIPPA
+FedRAMP
+SOC 2
+ISO 27001
+
+# example config rule, allow volume iops of values 3000, 4000
+rule desiredvolumeiops {
+    when configuration.volumetypes == CONFIG_RULE_PARAMETERS.volumeTypes {
+        configuration.iops in [3000, 4000]
+    }
+}
+
+ 
+# aws cloud trail lake query 
+#Example: Find all APIs that a user called on January 22, 2023
+
+SELECT 
+    eventID, 
+    eventName, 
+    eventSource, 
+    eventTime
+FROM 
+    event_data_store_ID
+WHERE 
+    userIdentity.username = 'bob' 
+AND 
+    eventTime > '2023-01-22 00:00:00' 
+AND 
+    eventTime < '2023-01-23 00:00:00'
+
+
+#Example: Find all users who signed in to the console in a set of Regions
+
+SELECT 
+    eventTime, 
+    useridentity.arn, 
+    awsRegion
+FROM 
+    event_data_store_ID
+WHERE 
+    awsRegion in ('us-east-1', 'us-west-2') 
+AND
+    eventName = 'ConsoleLogin'
+
+
+# aws config is the core of compliancce evaluations 
+
+
