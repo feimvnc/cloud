@@ -1,0 +1,288 @@
+As we cover each domain, you should evaluate if you're ready to move forward and take the exam or if you need more preparation and depth into the topics from each domain. Using that information, you can then evaluate the areas you need to cover and understand how much more depth is needed into those topics. In this course, you will also review sample exam questions from the exam domains and learn how to interpret the concepts being tested so that you can better eliminate incorrect responses. Again, take the time to evaluate if you're ready to move forward to take the exam or if you need more preparation in depth into the topics from each domain. 
+There are two types of questions on the exam, multiple choice, which has one correct response and three incorrect responses or distractors, or multiple response which has two or more correct responses out of five or more response options. During the exam, you'll be asked to choose the best answer for scenarios to complete tasks to design and implement systems on AWS. This highlights your capacity to incorporate resiliency, high performance, security, and cost optimization. 
+
+We will walk through these example questions but the overall length, complexity and difficulty of the questions tend to be longer and more complicated than what you might expect from an associate level certification exam. 
+
+Most of the questions involve lengthy scenarios that are usually several sentences to a couple paragraphs in length. Most of the answer choices will be several sentences long as well, so take your time as you're reading through these longer questions and be sure to process every word in detail that you read. Be on the lookout for repeated sentences across all of the possible answers with just a word or two change. Those one or two words can make all the difference when it comes to determining which answer is correct and which answer might be a distractor. 
+Always do your best to eliminate these distractors as early as possible so you can focus more on the plausible answers and select the best possible answer or answers to each question. Call to action, you've set your goal, now it's time to build knowledge and skills to propel your career. We recommend you take the time and effort to understand the content for each domain when studying for the Solutions Architect Associate Exam. 
+
+Use practice questions to build your reading comprehensive skills and identify keywords and phrases. It's easy to sign up and schedule your exam, click the link in the resources to get your exam scheduled. At the end of this course, you will also practice skills with hands on labs, test your knowledge with more practice question sets and learn strategies for identifying incorrect responses by interpreting the concepts that are being tested in the exam. Plus, you will take a full length official practice test that will help identify your strengths and weaknesses in each domain area. 
+
+This certification exam covers a broad range of topics. Your first resource should be the certification exam guide that outlines the certification exam and this course. A link to the exam guide will also be included in the course notes. AWS also provides additional resources and you can sign up for weekly exam tips and resources from AWS training and certification. Get exam ready tips on taking your exam, exam guides and sample questions and opportunities to dive deep on exam strategies with accredited AWS expert instructors. 
+Before we get started with the course, let's cover a few fundamentals in the next video.
+
+Fundamentals
+–
+Welcome back. Before we get started with the first domain, designing secure architectures, let's first focus on the fundamentals needed for the certification exam. 
+
+If you wanna understand AWS for the exam and the real world, you need to learn the fundamentals and learn how AWS could fail. If you understand how AWS could fail, you can design your architectures to work around failures. AWS likes to say everything fails all the time, and the focus of this exam, as you can see from the domains, is to know and understand how to design secure, resilient, high-performing, and cost-optimized solutions. 
+
+First, ensure you understand and can explain what AWS is and what cloud computing is. Dive deeper into the five criteria of cloud computing. Also ensure you understand the AWS Global Infrastructure and the architectural components, Regions, Edge Locations, and Availability Zones. Dive deeper into globally resilient, regionally resilient, and availability zone resilient services. 
+Some services are resilient in their Availability Zone. Some are resilient in their Region and can cope with the failure of an entire Availability Zone. Some services are resilient globally and can cope with the failure of an entire Region and still continue to operate. 
+
+AWS also provides the Shared Responsibility Model to help define and provide clarity about which areas of system security belong to AWS and which are owned by you, the user. And then finally, my absolute favorite, the AWS Well-Architected Framework. The best practices for designing and operating reliable, secure, efficient, and cost effective systems in the cloud have been consolidated into the AWS Well-Architected Framework. And understanding of the best practices is essential for those architecting solutions in AWS, but also for the certification exam. Dive deeper into the sixth pillar, Sustainability. As we mentioned, it is a new addition to this updated version. 
+
+There are several ways to learn about the AWS Well-Architected Framework. 
+
+First, there is the online documentation. I recommend reading through the AWS Well-Architected Framework multiple times and revisiting it as often as needed. This is going to be an excellent reference for you in preparing for the certification exam. 
+
+Second, there is the AWS Well-Architected Tool that is designed to help you review the state of your applications and workloads. 
+
+And third, there is the AWS Well-Architected Labs where you can get practice applying the Well-Architected concepts. 
+
+And the last fundamental you will need for this certification and in the real world is general fundamentals. Ensure you understand the fundamentals of networking, virtualization, encryption, storage, security, DNS, DNSSEC, databases, and so on. 
+
+To pass this certification and get a job in the real world, you need to know significantly more than what is required to pass this exam. If you are a solutions architect, you must know how to design resilient architectures. As a developer, you need to know how to create applications to cope with failures and be able to diagnose, repair, and prevent failed systems. For this certification and these roles, you need depth in fundamentals and in AWS. 
+
+Throughout this course and as you assess your knowledge level, we are here to help clarify and explain the context of the domains so that you're able to understand what the exam is asking you. Feel free to reach out any time. Again, using that information, you can then evaluate the areas you need to cover and understand how much more depth is needed for those topics. 
+Good luck completing this course. Let's get started with Domain 1, Design Secure Architectures. Scan the QR code to follow along and I'll see you in the next video.
+Module 1: Design Secure Architectures
+This module has eight videos.
+
+Domain 1 Introduction
++
+
+Secure access
+–
+Hi, and welcome back. Let's begin with the first task statement from Domain one Design Secure Access to AWS Resources. 
+
+We just mentioned that security is one of the biggest and earliest considerations you will make when designing an architecture. This includes defining how people, tools, and applications you build will access the necessary AWS services and your data. This could involve determining not only who or what can launch or terminate your resources but also managing how and when access is given along with operational permissions and almost anything else that would involve calls to the services. 
+
+In the course introduction we mentioned the importance of understanding fundamentals specifically the Shared Responsibility Model, the AWS global infrastructure, and different AWS service resilience. This task statement covers securing access to your AWS resources and securing access to services in different types of cloud environments. Ensure you know the differences between public, private, hybrid, and multi-cloud environments and how to design secure access to all of them. 
+
+One area that is often overlooked when studying for this certification exam is AWS accounts. AWS accounts may seem too basic to take the time to understand, but I consider it part of the required, need-to-know fundamentals for AWS. You must understand what accounts are and how they work to ensure you have secure access to your AWS resources. 
+
+Back to our fundamentals. What level of service is AWS IAM? Zonal, regional or global? IAM is a global AWS service that secures any data in the AWS IAM database across all AWS Regions. Ensure you understand IAM. Review the best practices for account root user security, applying the principle of least privilege, and multifactor authentication. 
+
+AWS accounts begin with a single account root user with full permissions. So, why is this a risk to use the account root user? Well, these account permissions cannot be changed or modified and if this account root user is compromised then so is the whole AWS environment. One way to secure the account root user is to add multi-factor authentication. But what else could we implement to secure our AWS account? How about adding another user with more limited permissions instead of using the account root user? When we add new users to our AWS account, those new users will be different people and need different levels of access. 
+
+What level of permissions do new IAM users have in your AWS account? IAM identities start with no permissions but permissions can be granted. Dive deeper into IAM users, groups, and roles and what goes into deciding between which to use and how they might be combined. Understand how using the principle of least privilege limits your blast radius. 
+
+Here are a few questions to consider. How do you create IAM users, groups, and roles? What are their strengths and limitations? And what scenarios would dictate possibly switching between the various user group and role-based permissions? Along with those identities, make sure you know how IAM and other AWS services give you the ability to secure the necessary credentials and best practices for handling those credentials. 
+
+Look at various methods of assuming roles including assigning roles to AWS services. Understand how to use AWS Security Token Service within and across accounts, and how roles are used with federations. Your users might already have identities outside of AWS such as in your corporate directory. If those users need to work with AWS resources or work with applications that access those resources then those users will need security credentials. You can use an IAM role to specify permission for users whose identity is federated from your organization or third party identity provider. 
+
+Do you know how to design and configure active directory to federation access to AWS IAM roles or users? Also dive into the best practices for controlling your application's access to AWS APIs. When should you hard code credentials into your application? The answer to this is never, but know the other ways to enable API access and dive deeper into IAM policies. 
+
+For this certification, you do not need to know how to write advanced policies, but you should be able to read and interpret policy documents. Learn the major parts of a policy statement what's required, and what are the ways in which the policies provide granularity with permissions. Make sure you also understand IAM decision logic when evaluating policies including how that will affect an identity with multiple policies attached. 
+
+Also ensure you know the appropriate use of resource policies for AWS services. What is a policy? Well, it's an object in AWS that when associated with an identity or resource defines their permissions. The two types of policies are identity based policies which are attached to an IAM user group or role. These policies give you the ability to specify what that identity can do. Its permissions. With identity policies, we control what resources that identity can access. With resource policies, we control who can access the resource. So resource based policies are attached to a resource such as an Amazon S3 bucket, Amazon SQS queues, VPC endpoints, AWS Key Management Service encryption keys to specify who has access to the resource and what actions they can perform on it. And bucket policies are structured differently compared to the structure of identity policies. The difference is the principle part of the policy. The principle part of a resource policy defines which principles are affected by this resource policy. 
+
+And lastly, understand the methods, services and tools available that help you create traceability for access to AWS resources. Traceability helps to monitor, alert and audit actions and changes to your environment in real time. It also helps to integrate log and metric collection with systems to automatically investigate and take action. Just as you need to be aware of the performance and behaviors of your application components. You also need to have insight into who and what has access to your account resources and data. 
+
+You will be tested on designing security strategies for multiple AWS accounts, know how to gain that visibility, how to enforce security standards, and how to alert and automate based on that data. Ensure you understand AWS Control Tower, AWS Organizations and service control policies. Learning to design secure access to the resources is an important step in learning how to prioritize security at every step. Take your time when learning these topics and get practice with both the designing and implementation whenever possible. 
+
+Let's get started with our first walkthrough question. I'll see you in the next video.
+
+Walkthrough question 1
+–
+Welcome to our first walkthrough question for the course. These walkthroughs are meant to assist you in a few ways. 
+
+First, this will be one of the opportunities to see the types of questions that you'll encounter on the actual exam. While the questions aren't pulled directly from the certification exam, they are of similar quality and difficulty and will give you exposure to this style of questioning. 
+Second, I want to show you methods I consider to be helpful when you're working with multiple-choice questions. These methods help you focus on what you're looking for and help you identify any distractors you may encounter on your exam. 
+
+And third, these questions will provide you with additional information. Any questions you feel confident in will reinforce your knowledge in that area, and any questions that reveal gaps in your knowledge will help you identify where to focus in your studies going forward. 
+As I go through each of these questions, I'll generally follow a particular format. I'll start by reading through the questions, sometimes called the stem. Then I'll identify key words and phrases in the stem that show you exactly what you're looking for in the responses or answers. After that, I'll go through the responses and I'll give you time to figure out if you can identify the correct response yourself. After you've been given a chance to figure out yourself, I'll go through the responses and discuss why they're correct or incorrect. Okay, now that I've given you a background information on how we're gonna run these questions, let's get started with our first question. 
+The stem reads, the CIO of a company is concerned about the security of the root user of their AWS account. How can the CIO ensure that the root account follows the best practices for securely logging in? Select two. 
+
+So, as you can see, this stem wants you to pick two answers out of the responses. Keep in mind that there is no partial credit on the exam. When you come across questions with multiple keys, be very careful to properly evaluate so that you're able to find all possible answers. Reading this question, can you identify any key words or phrases? And also, what exactly is the question asking?
+
+The stem is asking you to identify the two responses that will help the CIO ensure best practices for securely logging in with the root user. What about key words? A few key words I see are root user, best practices, and secure login. The question gives you all of the information you need to start looking at the responses. 
+
+Now let's look at the responses or the answers. 
+
+The answers are A, enforce the use of an Access Key ID and Secret Access Key for the root user logins. 
+B, enforce the use of MFA for the root user logins. 
+C, enforce the root user to assume a role to access the root user's own resources. 
+D, enforce the use of complex passwords for member account root user logins. 
+E, enforce the deletion of the root account so that it cannot be used. 
+
+I'll give you some time to identify the keys and you can pause the video if you need more time too. 
+The correct answers or keys for this item are B, enforce the use of MFA for the root user logins, and D, enforce the use of complex passwords for member account root user logins. Both of these methods will provide additional security for the root user of their AWS account. These are also in line with the security best practices. 
+
+Let's go through the distractors. 
+
+Starting with A, which recommends that you enforce the use of an Access Key ID and Secret Access Key for the root user logins. You use an Access Key ID and Secret Access Key to make programmatic requests to AWS. But you should not use your AWS account root user access key. This method gives the root user full access to all resources for all AWS services in the account, including the billing information. The permissions for this access method cannot be reduced. 
+For response C, you have, enforce the root user to assume a role to access the root user's own resources. This is incorrect because the root user cannot assume a role to its own account. Roles are used for services within the account and third-party access to other AWS accounts. 
+And last is E, which proposes you enforce the deletion of the root account so that it cannot be used. This will not work because if the root account is deleted, all resources will also be deleted. If this happens, you are no longer running environments in AWS. 
+How did you answer and understand this question? Remember when you are taking your exam, read each question and the answers completely to identify key words. Then eliminate the distractors and re-read the two plausible answers to choose your best answer. 
+
+Let's get started with the second task statement from domain one, design secure workloads and applications. Refer to the Exam Guide and scan here for a link to download and follow along, and I'll see you in the next video.
+
+Secure workloads
+–
+Welcome back. Let's get started with the second task statement designed to cure workloads and applications. The focus for this task statement is how the people, tools, and applications you build will securely access the necessary AWS services. This could involve determining who or what can launch or terminate your resources, managing how and when access is given, operational permissions, and again, almost anything else that would involve calls to the services. 
+Again, let's take a moment to go back to our fundamentals. Ensure you know how to design, build, and secure an Amazon Virtual Private Cloud or Amazon VPC. There are two types of Amazon VPC, default and custom. Make sure you know the differences and how the security for each is initially configured. 
+
+Let's also check in and see if you know what is the resilient type for an Amazon VPC. Is an Amazon VPC a zonal, regional, or global service? Well, when you create a VPC, it is in one Region and in one AWS account, so that makes an Amazon VPC a regional service. 
+
+Dive deeper and ensure you understand how to design secure VPC architectures. For example, many application architectures are multi-tiered. When studying about securing application tiers, pay attention to the use and functionality of security groups, network access control lists, route tables, and NAT gateways. These will provide management and security controls over your network traffic. They can provide granularity in the rules, restrictions, and allowances that you need. Understand how they work both together and individually. 
+
+Also understand how to build their rules, the pitfalls to avoid, rule processing logic, and methods to employ them for better combined functionality. Again, know the base configurations for security filters for both the default and custom VPC. 
+
+Back to fundamentals, ensure you understand networking fundamentals such as protocols, CIDR, subnetting, routing, security filters, gateways, and so on. 
+
+For network segmentation, understand the strategies behind, when to use public and private subnets, what differentiates a public from a private subnet, and common practices around the use of these subnets. Back to our fundamentals, what is a subnet? Ensure you know the fundamentals going into this exam. A subnet is where our services sit and run from inside our Amazon VPCs. They help to add structure and functionality to our VPCs. What resiliency do subnets have? Are they zonal, regional or global? Subnets are an Availability Zone resilient feature of AWS. 
+You'll also need to understand routing mechanisms within a VPC. This will involve the implementation, use and features of the route tables. For example, if you needed to allow specific types of traffic to access your application servers, but the traffic was going to be coming from your on premises location, traversing a VPN and your application servers were in a private subnet, how would you set that up? What could you do to make sure that the application servers were safe from access coming from the public internet, but also that there wouldn't be any issues at the VPC, subnet or instant levels for the requests coming in from the on premises that's connected by a VPN in your VPC? This solution will also require you to know how to appropriately select and deploy other components such as the AWS service endpoints, like PrivateLink, peering, transit gateways, VPN connections, Direct Connect, and other network connection tools and methods that are commonly used when deployed with VPCs. 
+
+Endpoints are a great way to add secure access. Again, fundamentals, what is an endpoint service? They're gateway objects that we can create inside our VPC similar to internet gateway or a NAT gateway to connect to AWS public services without the need of a gateway like the internet gateway or the NAT gateway. We just mentioned that AWS also has a VPC endpoint service, PrivateLink, which can help to solve the issue of exposing an application in adding secure access for other VPCs in other AWS accounts. 
+
+Let's say you have an application and you make that application public. Well, now you're using the internet and your application is exposed, so how can you secure this application? We could set up VPC peering, but that's gonna add more management overhead as you scale, and it also exposes other applications in the VPCs to the other VPCs that are peered. PrivateLink is a secure and scalable way to expose your application or service to tens or hundreds of VPCs with no peering, internet gateway, NAT gateway, and so on. 
+
+Ensure you know how to secure external connections to and from AWS resources using private connections with AWS Site-to-Site VPNs, AWS Client VPN, and Direct Connect. You want to ensure you understand the capacity, security, and resilience options for configuring each of these services. Let's step back again and talk about fundamentals and best practices for securing your data. 
+Here are a few questions to consider. How do you build in security to your networking tiers? How do you secure application use across these tiers? And what does the management of those security components look like? 
+
+For the exam, you could get a question asking, for which AWS service helps to secure personally identifiable information or PII? PII is personal data used to establish an individual's identity, this includes your name, your home address, email address, your social security number, driver license number, passport, date of birth, bank account information, credit card, and so on. 
+
+Amazon Macie is an AWS service that uses machine learning to discover, classify, and protect sensitive data stored in Amazon S3. More services to help here are Amazon Cognito, Amazon GuardDuty, and for Cognito, ensure you have an understanding of Cognito user pools, Cognito identity pools, and how Cognito brokers the single sign on or ID federation. You will most likely see scenario based questions around use cases for these services. 
+
+Another fundamental needed for designing secure workloads and applications is firewalls and proxy servers. You'll wanna understand how to integrate security services to secure applications with services such as AWS Shield AWS WAF, AWS IAM Identity Center, Amazon Cognito, Amazon Guard Duty, Amazon Macie, AWS Secrets Manager, and AWS Systems Manager Parameter Store. Understand the difference between Shield Standard and Shield Advance. 
+
+Know when and why you might choose one security service over another, such as if you're trying to prevent external DDoS or SQL injection attacks. For example, if you are storing a secret and need high volume access with automatic credential rotation, what would you choose? AWS Secrets Manager or AWS Systems Manager Parameter Store? AWS Secrets Manager is designed to store secrets more so than Systems Manager Parameter Store. And Secrets Manager can force the rotation of your secrets at a chosen interval of days. 
+
+Dive deeper and ensure you can choose the best service for the requirements. Another example, AWS WAF can only be deployed on certain AWS services, such as application load balancers, Amazon API Gateway, and Amazon CloudFront. 
+
+General understanding of these services will be crucial to knowing how they be deployed in the scenarios you will encounter on your exam. 
+Let's get started with our second walkthrough question. I'll see you in the next video.
+
+Walkthrough question 2
+–
+Welcome back. Let's take a look at another sample question. 
+
+The stem for this item is: "A solutions architect "must secure the network traffic for two applications "running on separate Amazon EC2 instances "in the same subnet. "The applications are called Application A "and Application B. "Application A requires that inbound HTTP requests "be allowed and all other inbound traffic be blocked. "Application B requires that inbound HTTPS traffic "be allowed and all other inbound traffic be blocked, "including HTTP traffic. "What should the solutions architect use "to meet these requirements?" 
+
+Reading this question, can you identify any key words or phrases? Also, what exactly is this question asking? The question here is what should you use to meet the requirements to allow HTTP requests and block all other traffic for Application A, and what should you use to allow inbound traffic for HTTPS but block all other inbound traffic for Application B? What key words did you identify? A few key words I see are same subnet and the allow and block of inbound traffic, except HTTP and HTTPS. 
+
+Now let's look at the answers. 
+
+A is to configure the access with network access control lists, 
+B is to configure the access with security groups, 
+C is to configure the network connectivity with VPC peering, 
+and D is to configure the network connectivity with route tables. 
+
+I'll give you some time to figure it out, and remember you can pause the video if needed. 
+
+The key for this answer is B, configure the security groups. B is correct because a security group acts as a virtual firewall for your instance to control inbound and outbound traffic. They support all allow rules only, blocking all other traffic if a matching rule is not found. Security groups are specifically applied at the instance, so different instances in the same subnet can have different rules applied
+. 
+Let's go to through the distractors.
+ 
+A is incorrect. While network access control lists can allow and block traffic, they operate at the subnet boundary. They use one set of rules for all traffic entering or leaving the particular subnet. Since the EC2 instances for both applications are in the same subnet, they would use the same network ACL. The question requires different security requirements for each application. 
+Answer C is incorrect. VPC peering permits separate distinct VPCs to communicate with each other and does not provide any traffic-blocking capabilities. 
+
+Answer D is also incorrect. A route table contains a set of rules called routes that are used to determine where network traffic from your subnet or gateway is directed. It does not provide any ability to block traffic as requested for applications that are in the same subnet. 
+How did you answer and understand this question? Remember when you're taking your exam, read each question and the answers completely to identify key words, then eliminate the distractors and reread the plausible answers to choose your best answer. 
+
+Let's get started with the third task statement from domain one, determine appropriate data security controls. Refer to the exam guide and scan here for a link to download and follow along. I'll see you in the next video.
+
+Data security controls
+–
+Welcome back. Let's get started with a third task statement, determine appropriate data security controls. For this task statement, and when considering security at every level, the protection of data is one of the most important areas of focus. 
+
+We mentioned this briefly in the last lesson. However, whether the data is in transit or at rest, its security needs to be evaluated. Under AWS accounts and IAM fundamentals, we talked about the principle of lease privilege, and this is important for security at each layer. Do you know how to design and implement the principle of lease privilege to ensure only those who need access have the only the degree of access that they need? 
+
+Diving deeper, do you also know how to design and implement securing access to your encryption keys? As a solutions architect, we need to understand the fundamentals of encryption. There are two types of encryption we need to know for this certification exam. Encryption at rest and encryption in transit. 
+
+So let's pause again and cover briefly some fundamentals needed for this exam. In AWS, we need to make sure our data is encrypted at rest and also in transit. 
+
+Encryption at rest is designed to protect against unauthorized access and theft. Encryption at rest is usually used when only one party is involved. 
+
+Encryption in transit is designed to protect data as it's being transferred between two places and two or more parties are involved. 
+
+Ensure you understand that using encryption adds a tunnel around that data so no one from the outside can read the data. And to understand encryption, it's important to understand some terms. Ensure you know the following terms and concepts. Plaintext is not always text data, but it is always unencrypted. It could be docs, images, applications, and so on. An algorithm is code that takes the plaintext and the encryption key, and generates your encrypted data. When a algorithm is being used, it needs the plaintext and also a key. A key is just a password and is used with the algorithms and produces ciphertext, and there are different types of keys in different types of encryption. Ciphertext is your encrypted data. 
+
+Now taking a step back, there are also two types of encryption and keys that we need to know, symmetric and asymmetric. 
+
+Here are a few questions to consider. What methods are available to secure your data at rest? For example, why would you use AWS KMS instead of AWS Cloud HSM for managing your data encryption keys or how can you use those two services together? How do you manage encryption keys across regions? What types of keys are there, and what are the differences in their capabilities? How often can you rotate each type of key? 
+
+Also, understand how to implement access policies for encryption keys. For this exam, you'll need to understand the main differences and why you might choose one service over another. Diving deeper, you should also know how to use AWS Certificate Manager to encrypt data in transit and how certificates are renewed. 
+
+You should also understand Amazon S3 encryption. S3 provides encryption at rest and in transit. With S3, you have two methods that support encryption, client side encryption and server side encryption. 
+
+With client side encryption, the objects being uploaded to S3 are encrypted before the data leaves the source to S3, so it happens on the client side. With server side encryption, the data uses the default encryption in transit with https. When that data arrives at S3, it is encrypted by S3, S3 manages this encryption. With client side encryption, you control all, with server side encryption, we have a few choices you need to know for this certification exam, so ensure you understand each. Server side encryption with customer provided keys, server side encryption with Amazon S3 managed keys, server side encryption with customer master keys stored in AWS KMS. 
+
+Let's change the topic slightly and talk about compliance and compliance requirements. For this exam, you also need to know which AWS technologies can help to meet and satisfy compliance requirements. We mentioned earlier that security and compliance is a shared responsibility between AWS and the customer. Understand AWS artifact and how to use the self-service central repository for the AWS security and compliance reports and online agreements. 
+
+Let's move on and talk about data retention, classification, and data recovery. There are best practices for securing sensitive data in AWS data stores. Ensure you have a good understanding of general data security patterns and a clear mapping of these patterns to cloud security controls. AWS provides the AWS cloud adoption framework with a specific security perspective to help. Let's dive deeper. 
+
+First, there are five capabilities, IAM, detective controls, infrastructure security, data protection, and incident response. But basically we need to ensure we are thinking about the data we are protecting, how it is stored, and who has access to it. 
+Second, remember that not all data is created equal. We must ensure our data is classified properly to enforce the security of that data. 
+
+Third, add security controls or defense in depth. Most important here is layering multiple security controls to provide redundancy along with two categories, preventative and detective. 
+Understand what data protection looks like for your architecture and your requirements. 
+Here are questions to consider. How do you design data protection when using a VPN over the internet, or over a private connection through AWS Direct Connect or connections between VPCs or for the transfer of your data between services such as Amazon S3 and your VPC? How do you protect the data in transit when reaching in users over the public internet? Also, how do the various data management and storage services handle data protection? 
+
+For example, how will data management and storage differ when looking at S3 versus Amazon EBS? And does the use of those protections change the performance of the services? Let's consider a scenario where the data is being generated on an instance that is using an EBS volume, that data needs to be protected while maintaining durability. Would you want to store the data on an encrypted EBS volume or transfer the data to an encrypted S3 bucket? The least effort would be to use the encrypted EBS volume. 
+
+Another question to consider, will the use of encryption affect performance, and if so, how? Ensure you know which services have no impact and which services might have a slight impact on the performance, for example, data retrieving speed with AWS RDS and AWS KMS, or when reading data from S3. 
+
+Also know how to handle the root keys and how that method differs from your data keys. Dive deeper into AWS KMS and S3. 
+
+Are there managed services that can help you secure, evaluate, and audit the security of your data? Definitely dive into AWS KMS. Understanding your data security options will require understanding how the services operate, their security options, and how the services interact. 
+Also, how do the various data management and storage services handle data protection? For example, how will data management and storage differ when looking at S3 versus Amazon EBS, and does the use of those protections change the performance of the services? Let's consider a scenario where the data is being generated on an EC2 instance that is using an EBS volume. The data needs to be protected while maintaining durability. Would you want to store the data on an encrypted EBS volume or transfer the data to an encrypted S3 bucket? The least effort would be to use the encrypted EBS volume. 
+
+Another question to consider is will the use of encryption affect performance, and if so, how? Ensure you know which services will have no impact and which services might have a slight impact on the performance. For example, data retrieving speed with Amazon RDS and AWS KMS or in reading data from S3. Also know how to handle the root keys and how that method differs for your data keys. Dive deeper into AWS KMS and S3. Are there any managed services that can help you secure, evaluate, and audit the security of your data? Definitely AWS KMS. Understanding your data security options will require understanding how the services operate, their security options, and how the services will interact. 
+
+The last thing I wanna bring to your attention is protecting based on access patterns. Certain services such as S3 give you the ability to manage security for entire buckets and to add control based on specific paths or objects. What capabilities exist for automatically managing the data lifecycle? For example, when would you use S3 lifecycle configurations instead of S3 intelligent tiering? You should know which services provide this level of granularity, read and build policies based on different access patterns and needs, and understand how those policies are evaluated by the service backend. 
+
+As I said earlier, data security will be extremely important when approaching this exam. The best solution will often be the most secure solution. When adding security at every layer, data protection will be crucial to the design and the implementation of your solutions on both the exam and in the real world. Prioritize security at every layer. Study with security in mind and evaluate how protection can be added both in original designs and reinforcing existing deployments. 
+
+Let's wrap up this lesson and go back to fundamentals and talk about cloud storage. What is cloud storage? How does it work? What are the benefits, requirements, and types? Well, cloud storage is a cloud computing model that stores data through a cloud computing provider who manages and operates data storage as a service. The benefits are no hardware to purchase, no storage to provision, and no capital spending. Time to deployment is faster and the storage lifecycle management policies add automation, savings, and can lock data in support of compliance requirements. Storage requirements along with the additional compliance requirements ensure your data is safe, secure, and available when needed. 
+
+At the basics for requirements, we need to ensure we plan and design for our durability, availability, security, regulatory and governance requirements, and functional requirements. We also need to ensure we know which type of data we are storing, object, file, or block. Then we have five ways to use cloud storage, backup and recovery, software test and development, data migration, compliance, and big data and data lakes. 
+
+Disaster recovery is a big part of this exam and must be included as part of your design for a resilient architecture. What options exist for different storage to protect data in the event of a disaster? Disaster recovery strategies available to you within AWS can be categorized into four approaches, ranging from the low cost and low complexity of making backups to more complex strategies using multiple active Regions. 
+
+Active passive strategies use an active site such as an AWS Region to host the workload and serve traffic. The passive site such as a different AWS Region is used for recovery. The passive site does not actively serve traffic until a failover event is invoked. For a disaster event based on disruption or loss of one physical data center for a well-architected highly available workload, you may only require a backup and restore approach to disaster recovery. If your definition of a disaster goes beyond the disruption or loss of a physical data center to that of a Region or if you are subject to regulatory requirements that require it, then you should consider pilot light, warm standby, or multi-site active-active. 
+
+Understand the AWS services that use a backup strategy that runs periodically or is continuous. How often you run your backup will determine your achievable recovery point. The backup should also offer a way to restore it to the point in time in which it was taken. 
+
+Here are a few services to dive deeper into, EBS snapshot, DynamoDB backup, RDS snapshot, Aurora snapshot, EFS backup when using AWS Backup, Amazon Redshift snapshot, Neptune snapshot, DocumentDB, and for Amazon S3, you can use Amazon S3 Cross-Region Replication to asynchronously copy objects to an S3 bucket in the disaster recovery Region continuously while providing versioning for the stored object so that you can choose your restoration point. 
+AWS backup provides a centralized location to configure, schedule, and monitor. Know the AWS backup capabilities for the following services and resources. EBS volumes, EC2 instances, RDS and Aurora databases, DynamoDB tables, EFS file systems, Storage Gateway volumes, and Amazon FSx for Windows and Lustre. AWS Backup also supports copying backups across Regions such as to a disaster recovery Region. Here's a question. What service can we use for hybrid environments? Well, what about AWS Storage Gateway? 
+
+For this exam, focus on data security patterns in the corresponding AWS security controls that protect your data. Let's get started with our third walkthrough question, and I'll see you in the next video.
+
+Walkthrough question 3
+–
+Welcome back. This time for the walkthrough question, I'm gonna change it up a bit. I'll still show you the stem and responses as usual, but instead of showing you the key words in the question, I'll just give you some time to identify them yourself. Remember to identify the important part to the question and ensure that any response you consider to be correct will need to meet all of the requirements. 
+
+The stem for this item is, a company needs to implement a secure data encryption solution to meet regulatory requirements. The solution must provide security and durability in generating, storing, and controlling cryptographic data keys. Which action should be taken to provide the most secure solution? 
+
+Okay, what key words can you identify and what is this question asking? 
+
+Let's look at the answers. 
+
+You have first A, to use AWS KMS to generate AWS KMS keys and data keys. Use KMS key policies to control access to the AWS KMS keys. 
+B is to use AWS KMS to generate cryptographic keys and import the keys to AWS Certificate Manager. Use IAM policies to control access to the keys. 
+C is to use a third-party solution from AWS Marketplace to generate the cryptographic keys and store them on an encrypted instance store volume. Use IAM policies to control access to the encryption key APIs. 
+D is to use OpenSSL to generate the cryptographic keys and upload the keys to an Amazon S3 bucket with encryption activated. Apply AWS Key Managed Service key policies to control access to the keys. 
+
+Take some time here to see if you can identify the correct response. And before we look at the key or correct answer, let's identify some key words. So the first key words that stand out for me are regulatory requirements. If you have depth in AWS KMS and CloudHSM, you will know that KMS uses hardware security modules to protect and validate your KMS keys, but KMS manages the software for the encryption. With CloudHSM, AWS provisions the encryption hardware for us, but we have to use our own client to perform the encryption. AWS KMS and CloudHSM are both FIPS compliant. KMS is level two and CloudHSM is level three. 
+
+Now let's look at the correct key. 
+Our key is response A. It suggests using KMS to generate and control access to keys. This solution provides a secure way to generate, store, and control the data keys and key durability. 
+
+Let's go through the distractors one by one, starting with B, which recommends using KMS to generate keys and then import them to AWS Certificate Manager and then using IAM policies to control access. This is a distractor because AWS Certificate Manager is used for storing SSL keys and not data keys. 
+
+C says to use a third-party solution for key generation, encrypted instance store volumes for storage, and IAM policies for access control to the encryption keys' APIs. The largest issue I see with this is the use of the instance store volumes. Those are specifically designed to be ephemeral, and that means that the durability requirement isn't met. 
+
+Last, we have D, which points towards OpenSSL for generation, S3 for storage, and KMS policies for access control. As there is no way to do key management directly from S3, and KMS policies only work for keys stored in KMS, this is also an incorrect response. 
+
+How did you answer and understand this question? Remember, when you are taking your exam, read each question and the answers completely to identify key words. Then eliminate the distractors and re-read the plausible answer to choose your best choice answer. 
+
+In the next video, we will wrap up domain one and then we'll get started with an introduction to domain two, design resilient architectures. And remember to get some hands-on experience in the first lab, design secure architectures. I'll see you in the next video.
+
+Secure architecture wrap up
+–
+Welcome back, and congratulations on finishing the first Domain for this certification. For your studies and preparation, dive deeper into protecting your resources, applications, and data. 
+
+One of the security best practices is to follow the principle of least privilege where we only grant the permissions needed and no more. What services can we use to follow the principle of least privilege when working in a multi account environment? Would you use AWS Control Tower AWS Service Catalog, or AWS Organizations? Be sure you have a good understanding of IAM. For example, when would you use an AWS IAM role and when would you use an IAM user? 
+Know the differences between an identity policy a resource policy, a permissions policy, and a service control policy. How are policies evaluated when there are overlapping allow and deny rules? Know different ways to federate into AWS. Be sure to know the AWS Single Sign-On service and different use cases for AWS Directory Service. 
+
+Understand what monitoring services exist in addition to Amazon CloudTrail, Amazon CloudWatch, and VPC Flow Logs. 
+
+Understand how to set up your own VPCs with the appropriate security controls. Be sure you know the use cases and capabilities of AWS Shield, AWS WAF, AWS Secrets Manager, and AWS Systems Manager Parameter Store. 
+
+Make sure you know how you can protect your data in transit and at rest in AWS. In what cases would you need to choose AWS KMS or AWS CloudHSM? 
+
+Ensure you have a solid understanding of the different AWS security services capabilities appropriate use cases and when another service might be a better option. Being able to choose between two different services based on the stem is gonna help you pass the certification exam.
+ 
