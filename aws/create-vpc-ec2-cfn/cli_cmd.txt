@@ -1,0 +1,26 @@
+# install / update aws-cli 
+curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+sudo installer -pkg ./AWSCLIV2.pkg -target /
+
+$ which aws
+/usr/local/bin/aws
+
+$ aws --version
+aws-cli/2.15.28 Python/3.11.8 Darwin/21.5.0 exe/x86_64 prompt/off
+
+# login
+aws configure
+
+# check available regions 
+aws ec2 describe-regions --output table
+
+aws cloudformation create-stack --stack-name mystack --template-body file://create-vpc.yml
+
+aws cloudformation wait stack-create-complete --stack-name mystack
+
+aws cloudformation wait stack-update-complete --stack-name mystack
+
+aws cloudformation describe-stacks
+
+aws cloudformation delete-stack --stack-name mystack
+
