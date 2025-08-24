@@ -1,0 +1,3 @@
+# ignore all .dll files
+.venv
+repl_state
